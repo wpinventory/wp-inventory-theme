@@ -10,6 +10,7 @@ get_header();
 /**
  * TODO: [] - Move the below if checks into separate functions
  * TODO: [] - Last thing to deal with is multiple shortcodes on the listing page and only showing one item detail on the detail page (not for all instances of the listing page shortcode)
+ * TODO: [] - My SSL notice I tapped into the wordpress notices hook isn't permanently dismissible - make it so #1
  */
 
 /**
