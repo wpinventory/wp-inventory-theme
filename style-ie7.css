@@ -1,0 +1,21 @@
+.menu li {
+	display: inline;
+}
+
+.menu li a {
+	display: inline;
+}
+
+#header .menu li a img {
+	display: inline;
+}
+
+.tabset li {
+	display: block;
+	float: left;
+	width: 15px;
+}
+
+#sidebar-home_sidebar {
+	top: 0;
+}

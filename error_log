@@ -1,0 +1,12 @@
+[26-Jul-2017 10:29:35 America/Denver] PHP Fatal error:  Class 'ACGTheme' not found in /home1/brewste8/public_html/wp-content/themes/brewster/index.php on line 10
+[29-Jul-2017 19:04:10 America/Denver] PHP Fatal error:  Class 'ACGTheme' not found in /home1/brewste8/public_html/wp-content/themes/brewster/index.php on line 10
+[07-Aug-2017 19:45:43 America/Denver] PHP Fatal error:  Call to undefined function get_header() in /home1/brewste8/public_html/wp-content/themes/brewster/404.php on line 6
+[07-Aug-2017 19:45:44 America/Denver] PHP Fatal error:  Call to undefined function get_header() in /home1/brewste8/public_html/wp-content/themes/brewster/404.php on line 6
+[13-Aug-2017 04:34:40 America/Denver] PHP Fatal error:  Call to undefined function get_header() in /home1/brewste8/public_html/wp-content/themes/brewster/404.php on line 6
+[13-Aug-2017 04:34:40 America/Denver] PHP Fatal error:  Call to undefined function wp_title() in /home1/brewste8/public_html/wp-content/themes/brewster/header.php on line 7
+[13-Aug-2017 04:34:40 America/Denver] PHP Fatal error:  Call to undefined function get_header() in /home1/brewste8/public_html/wp-content/themes/brewster/archive.php on line 7
+[13-Aug-2017 04:34:41 America/Denver] PHP Fatal error:  Call to undefined function get_header() in /home1/brewste8/public_html/wp-content/themes/brewster/404.php on line 6
+[13-Aug-2017 04:34:41 America/Denver] PHP Fatal error:  Call to undefined function wp_title() in /home1/brewste8/public_html/wp-content/themes/brewster/header.php on line 7
+[13-Aug-2017 04:34:41 America/Denver] PHP Fatal error:  Call to undefined function get_header() in /home1/brewste8/public_html/wp-content/themes/brewster/archive.php on line 7
+[17-Aug-2017 07:54:25 America/Denver] PHP Fatal error:  Class 'ACGTheme' not found in /home1/brewste8/public_html/wp-content/themes/brewster/index.php on line 10
+[17-Aug-2017 07:54:26 America/Denver] PHP Fatal error:  Class 'ACGTheme' not found in /home1/brewste8/public_html/wp-content/themes/brewster/index.php on line 10
