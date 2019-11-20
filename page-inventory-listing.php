@@ -9,8 +9,8 @@ get_header();
 
 /**
  * TODO: [] - Move the below if checks into separate functions
- * TODO: [] - Last thing to deal with is multiple shortcodes on the listing page and only showing one item detail on the detail page (not for all instances of the listing page shortcode)
- * TODO: [] - My SSL notice I tapped into the wordpress notices hook isn't permanently dismissible - make it so #1
+ * TODO: [x] - Last thing to deal with is multiple shortcodes on the listing page and only showing one item detail on the detail page (not for all instances of the listing page shortcode)
+ * TODO: [] - My SSL notice I tapped into the wordpress notices hook isn't permanently dismissible - make it so #1 --- @help: https://wordpress.stackexchange.com/questions/191479/how-to-save-dismissable-notice-state-in-wp-4-2/251191#251191
  */
 
 /**
@@ -33,28 +33,32 @@ if ( ! (int) get_post_meta( $post->ID, 'wpim_listing_page_sidebar_on_detail', TR
 /**
  * Hide content above or below the shortcode on the details page
  */
-$hide_content = FALSE;
-if ( (int) get_post_meta( $post->ID, 'wpim_listing_page_hide_content_on_detail', TRUE ) ) {
-	$hide_content = TRUE;
-}
+$hide_content = apply_filters( 'wpim_theme_hide_content', ( (bool) get_post_meta( $post->ID, 'wpim_listing_page_hide_content_on_detail', TRUE ) ), $post->ID );
+// $hide_content = FALSE;
+// if ( (int) get_post_meta( $post->ID, 'wpim_listing_page_hide_content_on_detail', TRUE ) ) {
+// 	$hide_content = TRUE;
+// }
 
 /**
  * Sidebar defaults
  */
-$sidebar  = FALSE;
-$position = get_post_meta( $post->ID, 'wpim_listing_page_sidebar_position', TRUE );
-$position = ( $position ) ? $position : 'right';
+// $sidebar  = FALSE;
+// $position = get_post_meta( $post->ID, 'wpim_listing_page_sidebar_position', TRUE );
+$sidebar  = get_post_meta( $post->ID, 'wpim_listing_page_sidebar_position', TRUE );
+$position = ( $sidebar ) ? $sidebar : 'right';
 
 /**
  * Build the appropriate CSS class based on the chosen position of the sidebar
  */
-if ( 'left' === $position ) {
-	$position_class = ' sbar_left';
-} elseif ( 'right' === $position ) {
-	$position_class = ' sbar_right';
-} else {
-	$position_class = '';
-}
+//if ( 'left' == $position ) {
+//	$position_class = ' sbar_left';
+//} elseif ( 'right' == $position ) {
+//$position_class = ' sbar_right';
+// } else {
+// 	$position_class = '';
+// }
+
+$position_class = ( $position ) ? " sbar_{$position}" : '';
 
 /**
  * Begin building the main wrapper classes
@@ -89,7 +93,10 @@ if ( $wpim_details_page && ! $show_on_detail ) {
                     <div class="post" id="post-<?php the_ID(); ?>">
 						<?php
 						if ( $wpim_details_page && $hide_content ) {
-							echo do_shortcode( '[wpinventory]' );
+							$content   = get_the_content();
+							$matches   = preg_match( "/(\[wpinventory.*\])/i", $content, $shortcodes );
+							$shortcode = ( ! empty( $shortcodes[0] ) ) ? $shortcodes[0] : '[wpinventory]';
+							echo do_shortcode( $shortcode );
 						} else {
 							the_content( '<p class="serif">Read the rest of this page &raquo;</p>' );
 						}
