@@ -128,7 +128,7 @@ blockquote {
 
 .contentwrapper li {
     list-style: inherit;
-    margin-left: 30px;
+    margin: 0 0 15px 30px;
 }
 
 section.main_content aside li.custom_text li {
@@ -237,6 +237,15 @@ tbody tr:nth-child(even) {
 }
 
 /*  Forms  */
+
+th,
+td {
+    padding: 10px;
+}
+
+tbody {
+    font-size: 15px;
+}
 
 input[type="text"],
 input[type="email"],
@@ -438,6 +447,7 @@ header nav li a {
     display: block;
     padding: 20px;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 header nav li li a {
@@ -748,6 +758,7 @@ div.select-selected {
 
 .wpinventory_loop_all_table {
     width: 100%;
+    margin: 0 0 50px;
 }
 
 .wpinventory_filter input.button {
@@ -804,6 +815,7 @@ div.select-selected {
     color: #fff;
     border-radius: 2px;
     font-size: 13px;
+    text-decoration: none;
 }
 
 .wpinventory_pagination a.page_current,
@@ -821,6 +833,10 @@ div.select-selected {
 
 .wpinventory_loop_all_div .wpinventory_item input.submit.wpim-add-to-cart {
     width: 100%;
+}
+
+.wpinventory_item div {
+    padding: 0 0 15px;
 }
 
 @media only screen and (max-width: 800px) {
@@ -886,7 +902,7 @@ div.select-selected {
     }
 
     header nav li a {
-        border-bottom: 1px solid #aa893a;
+        border-bottom: 1px solid #2d89ab;
     }
 
     header nav ul.sub-menu {
@@ -898,7 +914,6 @@ div.select-selected {
         left: auto;
         width: auto;
         display: block;
-        background: #d0bb7a;
     }
 
     header nav ul ul a {
@@ -906,7 +921,8 @@ div.select-selected {
     }
 
     ul.sub-menu a:hover {
-        background: #e8d896;
+        background: #2d89ab;
+        color: #fff;
     }
 }
 

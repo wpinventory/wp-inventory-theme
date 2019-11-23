@@ -1,8 +1,8 @@
 <?php
 
 /**
- * @package Alpha Channel Group Base Theme
- * @author Alpha Channel Group (www.alphachannelgroup.com)
+ * @package WP Inventory Base Theme
+ * @author WP Inventory (www.wpinventory.com)
  */
 
 if ( function_exists('register_nav_menus' )) {

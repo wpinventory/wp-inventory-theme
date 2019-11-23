@@ -8,8 +8,6 @@
 get_header();
 
 /**
- * TODO: [] - Move the below if checks into separate functions
- * TODO: [x] - Last thing to deal with is multiple shortcodes on the listing page and only showing one item detail on the detail page (not for all instances of the listing page shortcode)
  * TODO: [] - My SSL notice I tapped into the wordpress notices hook isn't permanently dismissible - make it so #1 --- @help: https://wordpress.stackexchange.com/questions/191479/how-to-save-dismissable-notice-state-in-wp-4-2/251191#251191
  */
 
@@ -34,29 +32,16 @@ if ( ! (int) get_post_meta( $post->ID, 'wpim_listing_page_sidebar_on_detail', TR
  * Hide content above or below the shortcode on the details page
  */
 $hide_content = apply_filters( 'wpim_theme_hide_content', ( (bool) get_post_meta( $post->ID, 'wpim_listing_page_hide_content_on_detail', TRUE ) ), $post->ID );
-// $hide_content = FALSE;
-// if ( (int) get_post_meta( $post->ID, 'wpim_listing_page_hide_content_on_detail', TRUE ) ) {
-// 	$hide_content = TRUE;
-// }
 
 /**
  * Sidebar defaults
  */
-// $sidebar  = FALSE;
-// $position = get_post_meta( $post->ID, 'wpim_listing_page_sidebar_position', TRUE );
 $sidebar  = get_post_meta( $post->ID, 'wpim_listing_page_sidebar_position', TRUE );
 $position = ( $sidebar ) ? $sidebar : 'right';
 
 /**
  * Build the appropriate CSS class based on the chosen position of the sidebar
  */
-//if ( 'left' == $position ) {
-//	$position_class = ' sbar_left';
-//} elseif ( 'right' == $position ) {
-//$position_class = ' sbar_right';
-// } else {
-// 	$position_class = '';
-// }
 
 $position_class = ( $position ) ? " sbar_{$position}" : '';
 

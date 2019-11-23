@@ -8,7 +8,7 @@
 					</div>
 					<?php
 					edit_post_link( 'Edit Page', '<div class="edit_link">', '</div>' );
-					ACGTheme::comments();
+					WPIMTheme::comments();
 				endwhile; endif; ?>
 			</article>
 		</section>

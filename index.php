@@ -7,7 +7,7 @@
  * Template Name: Blog
  */
 
-$blog_title = ACGTheme::get_option( 'blog_page_title' );
+$blog_title = WPIMTheme::get_option( 'blog_page_title' );
 if ( $blog_title ) {
 	$blog_title = '<h1 class="blogtitle">' . $blog_title . '</h1>';
 }
@@ -47,7 +47,7 @@ get_header(); ?>
                     </div>
 
 				<?php endwhile;
-				ACGTheme::navigation( 'blog' );
+				WPIMTheme::navigation( 'blog' );
 				?>
             </article>
             <aside>

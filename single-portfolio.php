@@ -26,7 +26,7 @@ if ( has_post_thumbnail() ) {
 }
 ?>
     <div id="contentwrapper">
-        <section class="main_content blogcontent no_sidebar single portfolio portfolio-<?php echo ACGTheme::get_option( 'portfolios_type' ); ?>">
+        <section class="main_content blogcontent no_sidebar single portfolio portfolio-<?php echo WPIMTheme::get_option( 'portfolios_type' ); ?>">
 			<?php if ( have_posts() ) {
 				while ( have_posts() ) {
 					the_post(); ?>
@@ -36,7 +36,7 @@ if ( has_post_thumbnail() ) {
                         </section>
 
 						<?php
-						$format = ACGTheme::get_option( 'portfolios_type' );
+						$format = WPIMTheme::get_option( 'portfolios_type' );
 						if ( 'gallery' == get_post_format() ) { ?>
                             <div class="post-format-content">
 								<?php
@@ -124,7 +124,7 @@ if ( has_post_thumbnail() ) {
 
 									echo $content;
 
-									define( 'GALLERY_IMAGE_WIDTH', ACGTheme::get_option( 'portfolio_image_width' ) );
+									define( 'GALLERY_IMAGE_WIDTH', WPIMTheme::get_option( 'portfolio_image_width' ) );
 								}
 								?>
                             </div>

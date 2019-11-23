@@ -10,7 +10,7 @@ $page_heading       = get_post_meta( $post->ID, 'page_heading', TRUE );
 $featured_img       = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full', FALSE, '' );
 $featured_img_thumb = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium', FALSE, '' );
 
-$default_img = ACGTheme::get_option( 'inner_default_featured' );
+$default_img = WPIMTheme::get_option( 'inner_default_featured' );
 
 if ( has_post_thumbnail() ) {
 	?>
@@ -77,7 +77,7 @@ if ( has_post_thumbnail() ) {
                             <div <?php post_class() ?>>
 								<?php
 								$permalink = get_the_permalink();
-								if ( ACGTheme::get_option( 'stay_in_category' ) ) {
+								if ( WPIMTheme::get_option( 'stay_in_category' ) ) {
 									$permalink = add_query_arg( 'cat_specific', get_query_var( 'cat' ), $permalink );
 								}
 								?>
@@ -87,13 +87,13 @@ if ( has_post_thumbnail() ) {
                                 </h2>
                                 <div class="entry entry_<?php echo $archive_content; ?>">
 									<?php
-									ACGTheme::the_content();
+									WPIMTheme::the_content();
 									?>
                                 </div>
                             </div>
                         </div>
 					<?php endwhile;
-					ACGTheme::navigation( 'archive' );
+					WPIMTheme::navigation( 'archive' );
 				else:
 					if ( is_category() ) { // If this is a category archive
 						printf( "<h2 class='center'>Sorry, but there aren't any posts in the %s category yet.</h2>", single_cat_title( '', FALSE ) );

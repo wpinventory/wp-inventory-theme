@@ -8,7 +8,6 @@ class WPIMThemeDB {
 	 */
 	public function __construct() {
 		self::add_actions();
-//		self::wpim_theme_default_values();
 	}
 
 	/**
@@ -68,14 +67,14 @@ class WPIMThemeDB {
 			<?php
 			$sidebar_position = get_post_meta( $post->ID, 'wpim_listing_page_sidebar_position', TRUE );
 			if ( ! $sidebar_position ) {
-				$sidebar_position = 'left';
+				$sidebar_position = 'right';
 			}
 			?>
             <legend><?php _e( 'Move Sidebar to the Left?' ); ?></legend>
             <div class="switch-field">
 				<?php
 				$checked = '';
-				if ( $sidebar_position === 'left' ) {
+				if ( $sidebar_position == 'left' ) {
 					$checked = 'checked';
 				}
 				echo '<label><input type="checkbox" name="wpim_listing_page_sidebar_position" value="left" ' . $checked . '>

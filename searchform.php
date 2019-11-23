@@ -1,6 +1,6 @@
 <?php 
-$placeholder = ACGTheme::get_option('placeholder_text', 'Search');
-$search_button = ACGTheme::get_option('search_button_text', 'Search &raquo;');
+$placeholder = WPIMTheme::get_option('placeholder_text', 'Search');
+$search_button = WPIMTheme::get_option('search_button_text', 'Search &raquo;');
 ?>
 <form method="get" id="searchform" action="<?php echo home_url(); ?>">
     <div>
