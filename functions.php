@@ -5,7 +5,7 @@
  */
 
 // Define this for use in a few places
-define( 'ACG_THEME_NAME', "WP Inventory Manager Theme" );
+define( 'ACG_THEME_NAME', "WP Inventory Manager" );
 // Theme version defined in ACGTheme class below
 
 // Require the relevant module files
@@ -21,7 +21,7 @@ require_once "includes/listing-page/db.class.php";
  */
 class WPIMTheme {
 
-	const THEME_VERSION = '2.2.0';
+	const THEME_VERSION = '1.0.0';
 
 	private static $initialized = FALSE;
 	public static $allowed_group = 'manage_options';
@@ -1130,3 +1130,7 @@ function wpim_theme_admin_styles( $hook ) {
 }
 
 add_action( 'admin_enqueue_scripts', 'wpim_theme_admin_styles' );
+
+add_filter( 'wpim_display_filter_form', function () {
+	return TRUE;
+} );

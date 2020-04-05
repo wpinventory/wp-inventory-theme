@@ -8,10 +8,6 @@
 get_header();
 
 /**
- * TODO: [] - My SSL notice I tapped into the wordpress notices hook isn't permanently dismissible - make it so #1 --- @help: https://wordpress.stackexchange.com/questions/191479/how-to-save-dismissable-notice-state-in-wp-4-2/251191#251191
- */
-
-/**
  * Have a look at the body class and see if this page load is a single view
  */
 $classes           = get_body_class();
